@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PapaBobs.Data
 {
-    public class Class1
-    {
-    }
+	class PriceRepository
+	{
+	}
 }

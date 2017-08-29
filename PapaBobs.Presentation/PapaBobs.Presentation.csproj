@@ -88,6 +88,12 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PapaBobs.Domain\PapaBobs.Domain.csproj">
+      <Project>{afb59e35-f0a6-4240-b1a6-0fc008cbfbbf}</Project>
+      <Name>PapaBobs.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
