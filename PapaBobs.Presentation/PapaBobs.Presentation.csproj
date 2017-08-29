@@ -75,6 +75,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\PapaBobsDb.mdf" />
+    <Content Include="App_Data\PapaBobsDb_log.ldf">
+      <DependentUpon>PapaBobsDb.mdf</DependentUpon>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -85,13 +89,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PapaBobs.Domain\PapaBobs.Domain.csproj">
       <Project>{afb59e35-f0a6-4240-b1a6-0fc008cbfbbf}</Project>
       <Name>PapaBobs.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PapaBobs.DTO\PapaBobs.DTO.csproj">
+      <Project>{8023dccd-1f73-4682-821a-289d2f5df491}</Project>
+      <Name>PapaBobs.DTO</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

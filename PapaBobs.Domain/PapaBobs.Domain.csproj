@@ -49,6 +49,10 @@
       <Project>{3bc6d307-eca7-40bc-a7a3-f143e3ae992b}</Project>
       <Name>PapaBobs.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PapaBobs.DTO\PapaBobs.DTO.csproj">
+      <Project>{8023dccd-1f73-4682-821a-289d2f5df491}</Project>
+      <Name>PapaBobs.DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
