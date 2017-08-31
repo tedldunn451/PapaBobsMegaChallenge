@@ -9,6 +9,10 @@ namespace PapaBobs.Data
 {
     public class OrderRepository
     {
+		public static void CreateOrder()
+		{
+
+		}
 		public static List<DTO.Order> GetOrders()
 		{
 			PapaBobsDbEntities db = new PapaBobsDbEntities();
