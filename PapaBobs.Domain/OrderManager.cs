@@ -14,6 +14,7 @@ namespace PapaBobs.Domain
 			//var order = new DTO.OrderDTO();
 
 			dtoOrder.OrderId = Guid.NewGuid();
+			dtoOrder.TotalCost = PriceManager.CalculateTotalCost(dtoOrder);
 
 			Data.OrderRepository.CreateOrder(dtoOrder);
 		}
