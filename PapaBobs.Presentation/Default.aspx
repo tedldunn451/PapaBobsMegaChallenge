@@ -5,11 +5,70 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div class="container">
+
+            <div class="page-header">
+                <h1>Papa Bob's Pizza</h1>
+                <p class="lead">Pizza to Code By</p>
+            </div>
+
+            <div class="form-group">
+                <label>Size:</label>
+                <asp:DropDownList ID="sizeDropDownList" runat="server" CssClass="form-control" AutoPostBack="true">
+                </asp:DropDownList>
+            </div>
+
+            <div class="form-group">
+                <label>Crust:</label>
+                <asp:DropDownList ID="crustDropDownList" runat="server" CssClass="form-control" AutoPostBack="true">
+                </asp:DropDownList>
+            </div>
+
+            <div>
+                <div class="checkbox"><label><asp:CheckBox ID="sausageCheckBox" runat="server" AutoPostBack="true"/> Sausage</label></div>
+                <div class="checkbox"><label><asp:CheckBox ID="pepperoniCheckBox" runat="server" AutoPostBack="true"/> Pepperoni</label></div>                    
+                <div class="checkbox"><label><asp:CheckBox ID="onionsCheckBox" runat="server" AutoPostBack="true"/> Onions</label></div>
+                <div class="checkbox"><label><asp:CheckBox ID="greenPepperCheckBox" runat="server" AutoPostBack="true"/> Green Peppers</label></div>
+            </div>
+
+            <h3>Deliver To:</h3>
+            <div class="form-group">
+                <label>Name:</label>
+                <asp:TextBox ID="nameTextBox" runat="server" CssClass="form-control"></asp:TextBox>
+            </div>
+
+            <div class="form-group">
+                <label>Address:</label>
+                <asp:TextBox ID="addressTextBox" runat="server" CssClass="form-control"></asp:TextBox>
+            </div>
+
+            <div class="form-group">
+                <label>Zip Code:</label>
+                <asp:TextBox ID="zipCodeTextBox" runat="server" CssClass="form-control"></asp:TextBox>
+            </div>
+
+            <div class="form-group">
+                <label>Phone:</label>
+                <asp:TextBox ID="phoneTextBox" runat="server" CssClass="form-control"></asp:TextBox>
+            </div>
+
+            <h3>Payment:</h3>
+            <div class="radio"><label><asp:RadioButton ID="cashRadioButton" runat="server" GroupName="paymentGroup"/> Cash</label></div>
+            <div class="radio"><label><asp:RadioButton ID="creditRadioButton" runat="server" GroupName="paymentGroup"/> Credit</label></div>
+               
+            <asp:Button CssClass="btn btn-lg btn-primary" ID="orderButton" runat="server" Text="Order" OnClick="orderButton_Click"/>
+
+            <h3>Total Cost:</h3><asp:Label ID="totalCostLabel" runat="server"></asp:Label>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+
         </div>
     </form>
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
 </body>
 </html>
