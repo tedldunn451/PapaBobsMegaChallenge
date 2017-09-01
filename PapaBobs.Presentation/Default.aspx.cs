@@ -48,7 +48,7 @@ namespace PapaBobs.Presentation
 			{
 				var order = buildOrder();
 				Domain.OrderManager.CreateOrder(order);
-				Response.Redirect("success.aspx");
+				Response.Redirect("Success.aspx");
 			}
 			catch (Exception ex)
 			{
