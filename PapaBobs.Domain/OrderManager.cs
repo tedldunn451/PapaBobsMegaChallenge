@@ -11,18 +11,19 @@ namespace PapaBobs.Domain
     {
 		public static void CreateOrder(DTO.OrderDTO dtoOrder)
 		{
-			//var order = new DTO.OrderDTO();
-
 			dtoOrder.OrderId = Guid.NewGuid();
 			dtoOrder.TotalCost = PriceManager.CalculateTotalCost(dtoOrder);
-
 			Data.OrderRepository.CreateOrder(dtoOrder);
 		}
 
 		public static List<DTO.OrderDTO> GetOrders()
 		{
-			var orders = Data.OrderRepository.GetOrders();
-			return orders;
+			return Data.OrderRepository.GetOrders();
+		}
+
+		public static void CompleteOrder(Guid orderId)
+		{
+			Data.OrderRepository.CompleteOrder(orderId);
 		}
     }
 }
