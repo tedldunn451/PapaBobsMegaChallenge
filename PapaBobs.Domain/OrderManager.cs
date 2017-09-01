@@ -13,6 +13,8 @@ namespace PapaBobs.Domain
 		{
 			//var order = new DTO.OrderDTO();
 
+			dtoOrder.OrderId = Guid.NewGuid();
+
 			Data.OrderRepository.CreateOrder(dtoOrder);
 		}
 

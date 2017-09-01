@@ -20,7 +20,7 @@ namespace PapaBobs.Data
         public bool Sausage { get; set; }
         public bool Pepperoni { get; set; }
         public bool Onions { get; set; }
-        public long GreenPeppers { get; set; }
+        public bool GreenPeppers { get; set; }
         public decimal TotalCost { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
