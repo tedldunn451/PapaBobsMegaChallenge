@@ -15,8 +15,8 @@ namespace PapaBobs.Data
     public partial class Order
     {
         public System.Guid OrderId { get; set; }
-        public int Size { get; set; }
-        public int Crust { get; set; }
+        public PapaBobs.DTO.Enums.SizeType Size { get; set; }
+        public PapaBobs.DTO.Enums.CrustType Crust { get; set; }
         public bool Sausage { get; set; }
         public bool Pepperoni { get; set; }
         public bool Onions { get; set; }
@@ -26,7 +26,7 @@ namespace PapaBobs.Data
         public string Address { get; set; }
         public string ZipCode { get; set; }
         public string Phone { get; set; }
-        public int PaymentType { get; set; }
+        public PapaBobs.DTO.Enums.PaymentType PaymentType { get; set; }
         public bool Completed { get; set; }
     }
 }

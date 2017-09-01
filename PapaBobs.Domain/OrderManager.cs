@@ -9,12 +9,14 @@ namespace PapaBobs.Domain
 {
     public class OrderManager
     {
-		public static void CreateOrder()
+		public static void CreateOrder(DTO.OrderDTO dtoOrder)
 		{
-			Data.OrderRepository.CreateOrder();
+			//var order = new DTO.OrderDTO();
+
+			Data.OrderRepository.CreateOrder(dtoOrder);
 		}
 
-		public static List<DTO.Order> GetOrders()
+		public static List<DTO.OrderDTO> GetOrders()
 		{
 			var orders = Data.OrderRepository.GetOrders();
 			return orders;

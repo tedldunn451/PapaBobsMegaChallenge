@@ -43,7 +43,7 @@
     <Compile Include="Enums\CrustType.cs" />
     <Compile Include="Enums\PaymentType.cs" />
     <Compile Include="Enums\SizeType.cs" />
-    <Compile Include="Order.cs" />
+    <Compile Include="OrderDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

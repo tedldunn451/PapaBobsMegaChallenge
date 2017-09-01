@@ -9,24 +9,50 @@ namespace PapaBobs.Data
 {
     public class OrderRepository
     {
-		public static void CreateOrder()
+		public static void CreateOrder(DTO.OrderDTO dtoOrder)
 		{
+			var db = new PapaBobsDbEntities();
 
+			var order = convertToEntity(dtoOrder);
+			db.Orders.Add(order);
+			db.SaveChanges();
 		}
-		public static List<DTO.Order> GetOrders()
+
+		private static Order convertToEntity(DTO.OrderDTO dtoOrder)
+		{
+			var order = new Order();
+
+			order.OrderId = dtoOrder.OrderId;
+			order.Size = dtoOrder.Size;
+			order.Crust = dtoOrder.Crust;
+			order.Sausage = dtoOrder.Sausage;
+			order.Pepperoni = dtoOrder.Pepperoni;
+			order.Onions = dtoOrder.Onions;
+			order.GreenPeppers = dtoOrder.GreenPeppers;
+			order.Name = dtoOrder.Name;
+			order.Address = dtoOrder.Address;
+			order.Phone = dtoOrder.Phone;
+			order.ZipCode = dtoOrder.ZipCode;
+			order.TotalCost = dtoOrder.TotalCost;
+			order.PaymentType = dtoOrder.PaymentType;
+			order.Completed = dtoOrder.Completed;
+
+			return order;
+		}
+		public static List<DTO.OrderDTO> GetOrders()
 		{
 			PapaBobsDbEntities db = new PapaBobsDbEntities();
 			var dbOrders = db.Orders.ToList();
 
-			var dtoOrders = new List<DTO.Order>();
+			var dtoOrders = new List<DTO.OrderDTO>();
 
 			foreach (var dbOrder in dbOrders)
 			{
-				var dtoOrder = new DTO.Order();
+				var dtoOrder = new DTO.OrderDTO();
 
 				dtoOrder.OrderId = dbOrder.OrderId;
-				dtoOrder.Size = dbOrder.Size;
-				dtoOrder.Crust = dbOrder.Crust;
+				//dtoOrder.Size = dbOrder.Size;
+				//dtoOrder.Crust = dbOrder.Crust;
 				dtoOrder.Sausage = dbOrder.Sausage;
 				dtoOrder.Pepperoni = dbOrder.Pepperoni;
 				dtoOrder.Onions = dbOrder.Onions;
@@ -36,7 +62,7 @@ namespace PapaBobs.Data
 				dtoOrder.Address = dbOrder.Address;
 				dtoOrder.ZipCode = dbOrder.ZipCode;
 				dtoOrder.Phone = dbOrder.Phone;
-				dtoOrder.PaymentType = dbOrder.PaymentType;
+				//dtoOrder.PaymentType = dbOrder.PaymentType;
 				dtoOrder.Completed = dbOrder.Completed;
 
 				dtoOrders.Add(dtoOrder);
