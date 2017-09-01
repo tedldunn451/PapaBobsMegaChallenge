@@ -68,6 +68,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PapaBobsEntities.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Price.cs">
+      <DependentUpon>PapaBobsEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="PriceRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

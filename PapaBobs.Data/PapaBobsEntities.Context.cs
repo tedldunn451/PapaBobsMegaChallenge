@@ -26,5 +26,6 @@ namespace PapaBobs.Data
         }
     
         public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<Price> Prices { get; set; }
     }
 }
